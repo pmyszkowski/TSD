@@ -1,0 +1,11 @@
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/bin/Debug/netcoreapp3.1/myApp
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/bin/Debug/netcoreapp3.1/myApp.deps.json
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/bin/Debug/netcoreapp3.1/myApp.runtimeconfig.json
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/bin/Debug/netcoreapp3.1/myApp.runtimeconfig.dev.json
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/bin/Debug/netcoreapp3.1/myApp.dll
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/bin/Debug/netcoreapp3.1/myApp.pdb
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/obj/Debug/netcoreapp3.1/myApp.csprojAssemblyReference.cache
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/obj/Debug/netcoreapp3.1/myApp.AssemblyInfoInputs.cache
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/obj/Debug/netcoreapp3.1/myApp.AssemblyInfo.cs
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/obj/Debug/netcoreapp3.1/myApp.dll
+/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/obj/Debug/netcoreapp3.1/myApp.pdb
