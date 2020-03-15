@@ -10,47 +10,32 @@ namespace TSD.Linq.Cars
 {
     public class CarSalesBook
     {
-        private IList<Car> _cars;
+        public IList<Car> CarsFromHand { get; private set; }
+        public IList<Car> CarsFromCsv  { get; private set; }
 
         public CarSalesBook()
         {
-            _cars = GenerateCars();
+            CarsFromHand = GenerateCars();
+            CarsFromCsv  = ReadCarsFromFile();
         }
-
         private IList<Car> GenerateCars()
         {
-            List<Car> cars = new List<Car>();
-            Car car1 = new Car();
-            // car1.SetMake("Skoda");
-            // car1.SetSales2015(45529);
-            // car1.SetSales2014(44243);
+            // Task 1.4 & 1.5
+            var cars = new List<Car>()
+            {
+                new Car("Skoda") {Sales2014 = 45529, Sales2015 = 44243},
+                new Car("Toyota") {Sales2014 = 36465, Sales2015 = 31484},
+                new Car("BMW") {Sales2014 = 9549, Sales2015 = 7714},
+            };
 
-            cars.Add(car1);
-
-            Car car2 = new Car();
-            // car2.SetMake("Toyota");
-            // car2.SetSales2015(36465);
-            // car2.SetSales2014(31484);
-
-            cars.Add(car2);
-
-            Car car3 = new Car();
-            // car3.SetMake("BMW");
-            // car3.SetSales2015(9549);
-            // car3.SetSales2014(7714);
-
-            cars.Add(car3);
-
-
-            // IList<Car> sortedCars = cars.OrderBy(c => c.GetSales2015()).ToList();
+            IList<Car> sortedCars = cars.OrderBy(c => c.Sales2015).ToList();
         
             return cars;
         }
 
-        private IList<Car> ReadCarsFromFile()
+        public IList<Car> ReadCarsFromFile()
         {
-            List<Car> cars = new List<Car>();
-            return cars; // CarDataFileReader.ReadCarsFromCSVFile();
+            return CarDataFileReader.ReadCarsFromCSVFile();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TSD.Linq.Cars;
 
-namespace myApp
+namespace TSD.Linq.Cars
 {
     public class CarDataFileReader
     {
@@ -16,17 +16,18 @@ namespace myApp
             ///
             /// TODO: Provide file path
             /// 
-            TextReader textReader = new StreamReader(@"D:\cars.csv");
+            TextReader textReader = new StreamReader(@"/home/pmyszkow/master-degree/TSD/TSD/02-LINQ/myApp/cars.csv");
             textReader.ReadLine();
             string[] linesFromFile = textReader.ReadToEnd().Split('\n');
             foreach (var line in linesFromFile)
             {
                 string[] fields = line.Split(';');
-                Car newCar = new Car();
-                // newCar.Make = fields[0];
-                // newCar.SetSales2014 = int.Parse(fields[1]);
-                // newCar.SetSales2015 = int.Parse(fields[2]));
-                // cars.Add(newCar);
+                // Task 1.4
+                Car newCar = new Car(fields[0]) {
+                    Sales2014 = int.Parse(fields[1]),
+                    Sales2015 = int.Parse(fields[2])
+                };
+                cars.Add(newCar);
             }
 
             return cars;
