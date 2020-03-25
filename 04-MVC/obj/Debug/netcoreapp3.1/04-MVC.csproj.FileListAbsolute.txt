@@ -33,3 +33,5 @@
 /home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/04-MVC.dll
 /home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/04-MVC.pdb
 /home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/04-MVC.csproj.CopyComplete
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/HelloWorld/index.cshtml.g.cs
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/HelloWorld/Welcome.cshtml.g.cs
