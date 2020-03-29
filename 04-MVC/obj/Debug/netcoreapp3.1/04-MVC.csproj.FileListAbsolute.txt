@@ -168,3 +168,8 @@
 /home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Movies/Details.cshtml.g.cs
 /home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Movies/Edit.cshtml.g.cs
 /home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Movies/Index.cshtml.g.cs
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Create.cshtml.g.cs
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Delete.cshtml.g.cs
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Details.cshtml.g.cs
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Edit.cshtml.g.cs
+/home/pmyszkow/master-degree/TSD/TSD/04-MVC/obj/Debug/netcoreapp3.1/Razor/Views/Recipe/Index.cshtml.g.cs

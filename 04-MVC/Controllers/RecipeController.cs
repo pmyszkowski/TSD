@@ -10,22 +10,22 @@ using _04_MVC.Models;
 
 namespace _04_MVC.Controllers
 {
-    public class MoviesController : Controller
+    public class RecipeController : Controller
     {
-        private readonly MvcMovieContext _context;
+        private readonly RecipeContext _context;
 
-        public MoviesController(MvcMovieContext context)
+        public RecipeController(RecipeContext context)
         {
             _context = context;
         }
 
-        // GET: Movies
+        // GET: Recipe
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movie.ToListAsync());
+            return View(await _context.Recipe.ToListAsync());
         }
 
-        // GET: Movies/Details/5
+        // GET: Recipe/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace _04_MVC.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movie
+            var recipe = await _context.Recipe
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null)
+            if (recipe == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            return View(recipe);
         }
 
-        // GET: Movies/Create
+        // GET: Recipe/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: Recipe/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Name,Time,Difficulty,NumberOfLikes,Ingredients,Process,TipsAndTricks")] Recipe recipe)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
+                _context.Add(recipe);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(recipe);
         }
 
-        // GET: Movies/Edit/5
+        // GET: Recipe/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace _04_MVC.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movie.FindAsync(id);
-            if (movie == null)
+            var recipe = await _context.Recipe.FindAsync(id);
+            if (recipe == null)
             {
                 return NotFound();
             }
-            return View(movie);
+            return View(recipe);
         }
 
-        // POST: Movies/Edit/5
+        // POST: Recipe/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Time,Difficulty,NumberOfLikes,Ingredients,Process,TipsAndTricks")] Recipe recipe)
         {
-            if (id != movie.Id)
+            if (id != recipe.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace _04_MVC.Controllers
             {
                 try
                 {
-                    _context.Update(movie);
+                    _context.Update(recipe);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.Id))
+                    if (!RecipeExists(recipe.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace _04_MVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(recipe);
         }
 
-        // GET: Movies/Delete/5
+        // GET: Recipe/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace _04_MVC.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movie
+            var recipe = await _context.Recipe
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null)
+            if (recipe == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            return View(recipe);
         }
 
-        // POST: Movies/Delete/5
+        // POST: Recipe/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await _context.Movie.FindAsync(id);
-            _context.Movie.Remove(movie);
+            var recipe = await _context.Recipe.FindAsync(id);
+            _context.Recipe.Remove(recipe);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MovieExists(int id)
+        private bool RecipeExists(int id)
         {
-            return _context.Movie.Any(e => e.Id == id);
+            return _context.Recipe.Any(e => e.Id == id);
         }
     }
 }

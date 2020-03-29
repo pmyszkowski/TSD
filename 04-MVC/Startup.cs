@@ -27,8 +27,9 @@ namespace _04_MVC
         {
             services.AddControllersWithViews();
             
-            services.AddDbContext<MvcMovieContext>(options =>
-            options.UseSqlite(Configuration.GetConnectionString("MvcMovieContext")));
+            services.AddDbContext<RecipeContext>(options =>
+            options.UseSqlite(Configuration.GetConnectionString("RecipeContext")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
