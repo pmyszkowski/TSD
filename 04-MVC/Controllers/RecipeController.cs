@@ -12,6 +12,19 @@ namespace _04_MVC.Controllers
 {
     public class RecipeController : Controller
     {
+        public async Task<IActionResult> Index(string searchString)
+        {
+            var movies = from m in _context.Recipe
+                        select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Name.Contains(searchString));
+            }
+
+            return View(await movies.ToListAsync());
+        }
+        
         private readonly RecipeContext _context;
 
         public RecipeController(RecipeContext context)
@@ -20,10 +33,10 @@ namespace _04_MVC.Controllers
         }
 
         // GET: Recipe
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Recipe.ToListAsync());
-        }
+        // public async Task<IActionResult> Index()
+        // {
+        //     return View(await _context.Recipe.ToListAsync());
+        // }
 
         // GET: Recipe/Details/5
         public async Task<IActionResult> Details(int? id)

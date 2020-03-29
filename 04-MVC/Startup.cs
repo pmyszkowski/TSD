@@ -56,7 +56,7 @@ namespace _04_MVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}/{name?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
