@@ -1,0 +1,77 @@
+# Pieces of cake
+
+def factorial(number)
+  if number == 0 
+    return 1
+  end
+  (1..number).inject { |fac, n| fac * n }
+end
+
+module IntegerModule
+  def sample(number)
+    if (number <= 0)
+      raise "Runtime error: the number must be positive"
+    end
+    samples = Array.new(number) { |e| e = rand(9) }
+  end
+end
+
+class Integer
+  extend IntegerModule
+
+  class << self  
+    alias_method :random, :sample
+  end 
+
+  def factorial
+    if (self < 0)
+      raise "Runtime error: cannot count factorial for negative number"
+    end
+    if (self == 0)
+      return 1
+    end
+    (1..self).inject { |fac, n| fac * n }
+  end
+
+  def sqare
+    self * self
+  end
+end
+
+# Let's start thinking
+
+def min_max(array)
+  min_array = array.sort
+  max_array = array.sort.reverse
+  
+  min = min_array[0..3].sum
+  max = max_array[0..3].sum
+
+  puts "#{min} #{max}"
+end
+
+def decimal(text)
+  not_allowed_array = Array(2..9).map(&:to_s)
+  not_allowed_array.each do |e|
+    if text.include?(e) 
+      raise "ArgumentError: this is not a binary number" 
+    end
+  end
+  text.to_i(2)
+end
+  
+def count_words(text)
+  counts = Hash.new(0)
+  split_text = text.split
+  split_text.each do |word|
+    counts[word] += 1
+  end
+  counts
+end
+
+def panagram?(text)
+  letters = ('a'..'z').to_a
+  letters.all? { |char| text.downcase.include?(char) }
+end
+
+
